@@ -13,14 +13,14 @@ public class NumbersTest {
     public void printing_list_range() {
 
         Numbers numbers3 = new Numbers(1, 9);
-        List<Integer> firstlist = numbers3.displayListRange();
+        List<Integer> firstList = numbers3.displayListRange();
 
-        List<Integer> listtest = new ArrayList<Integer>();
+        List<Integer> listTest = new ArrayList<Integer>();
         for (int l = 1; l <= 9; l++) {
-            listtest.add(l);
+            listTest.add(l);
         }
 
-        Assert.assertThat(firstlist, is(listtest));
+        Assert.assertThat(firstList, is(listTest));
 
     }
 

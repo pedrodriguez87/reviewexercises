@@ -5,10 +5,19 @@ public class Numbers {
 
     private int min;
     private int max;
+    private int nextmin;
 
 
     public Numbers(int min, int max) {
         this.min = min;
+        this.max = max;
+        this.nextmin = min + 1;
+
+    }
+
+    // Setting min as 0, would let us to print any range of numbers between 0 and x.
+    public Numbers(int max) {
+        this.min = 0;
         this.max = max;
     }
 
@@ -28,7 +37,7 @@ public class Numbers {
         this.max = max;
     }
 
-    public void displayMintoMax() {
+    public void displayMinToMax() {
 
         for (int i = min; i <= max; i++) {
             System.out.println(i);
@@ -38,11 +47,21 @@ public class Numbers {
 
     public List<Integer> displayListRange() {
 
-        List<Integer> listrange = new ArrayList<Integer>();
+        List<Integer> listRange = new ArrayList<Integer>();
         for (int i = min; i <= max; i++) {
-            listrange.add(i);
+            listRange.add(i);
         }
-        return listrange;
+        return listRange;
+
+    }
+
+    public List<Integer> displayListExcludingValues() {
+
+        List<Integer> listRange = new ArrayList<Integer>();
+        for (int i = nextmin; i < max; i++) {
+            listRange.add(i);
+        }
+        return listRange;
 
     }
 }
